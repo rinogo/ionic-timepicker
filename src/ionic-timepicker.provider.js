@@ -123,11 +123,6 @@ angular.module('ionic-timepicker.provider', [])
         setMinSecs($scope.mainObj.inputTime, $scope.mainObj.format);
 
         buttons.push({
-          text: $scope.mainObj.closeLabel,
-          type: 'button_close'
-        });
-
-        buttons.push({
           text: $scope.mainObj.setLabel,
           type: 'button_set',
           onTap: function (e) {
@@ -146,6 +141,11 @@ angular.module('ionic-timepicker.provider', [])
             }
             $scope.mainObj.callback(totalSec);
           }
+        });
+
+        buttons.push({
+          text: $scope.mainObj.closeLabel,
+          type: 'button_close'
         });
 
         $scope.popup = $ionicPopup.show({
